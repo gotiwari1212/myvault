@@ -1,0 +1,19 @@
+- hosts: all 
+  tasks:
+  - yum:
+      name: 
+      - php
+      - mariadb 
+      state: present
+    when: inventory_hostname in groups['dev']
+
+  - yum:
+      name: '@RPM Development Tools' 
+      state: present
+    when: inventory_hostname in groups['dev']
+
+  - yum:
+      name: '*' gotiwari1212-patch-1
+      state: latest 
+    when: inventory_hostname in groups['dev'] 
+
