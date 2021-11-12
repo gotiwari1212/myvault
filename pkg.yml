@@ -1,19 +1,19 @@
-- hosts: all 
+- hosts: servera
   tasks:
   - yum:
       name: 
       - php
       - mariadb 
       state: present
-    when: inventory_hostname in groups['dev']
+    
 
   - yum:
       name: '@RPM Development Tools' 
       state: present
-    when: inventory_hostname in groups['dev']
+   
 
   - yum:
       name: '*'
       state: latest 
-    when: inventory_hostname in groups['dev'] 
+     
 
