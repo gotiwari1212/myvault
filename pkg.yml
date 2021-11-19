@@ -1,17 +1,8 @@
 - hosts: servera
   tasks:
   - yum:
-      name: 
-      - php
-      - mariadb 
+      name: httpd     
       state: present
     
-
-  
-   
-
-  - yum:
-      name: '*'
-      state: latest 
      
 
